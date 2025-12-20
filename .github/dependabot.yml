@@ -19,4 +19,3 @@ updates:
       - "dependabot[bot]"
     labels:
       - "dependencies"
-    auto-merge: true

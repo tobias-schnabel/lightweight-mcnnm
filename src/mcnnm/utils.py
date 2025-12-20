@@ -218,7 +218,7 @@ def generate_data(
         + np.outer(np.ones(nobs), time_fe_values)
         + (np.repeat(X @ X_coef, nperiods).reshape(nobs, nperiods) if X_cov else 0)  # type: ignore
         + (np.tile((Z @ Z_coef).reshape(1, -1), (nobs, 1)) if Z_cov else 0)  # type: ignore
-        + (np.sum(V * V_coef, axis=2) if V_cov else 0)
+        + (np.sum(V * V_coef, axis=2) if V_cov and V is not None else 0)  # type: ignore[operator]
         + errors
     )
 

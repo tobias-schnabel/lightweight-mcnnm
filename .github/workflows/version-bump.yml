@@ -11,7 +11,9 @@ permissions:
 
 jobs:
   version-bump:
-    if: github.event.pull_request.merged == true
+    if: >
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.user.login != 'dependabot[bot]'
     runs-on: ubuntu-latest
 
     steps:
