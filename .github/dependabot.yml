@@ -12,10 +12,5 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-      scope: "deps"
-    reviewers:
-      - "dependabot[bot]"
-    assignees:
-      - "dependabot[bot]"
     labels:
       - "dependencies"
