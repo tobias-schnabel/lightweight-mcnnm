@@ -13,9 +13,9 @@ from .utils import extract_shortest_path, generate_lambda_grid, propose_lambda_v
 
 def cross_validate(
     Y: Array,
-    X: Array,
-    Z: Array,
-    V: Array,
+    X: Array | None,
+    Z: Array | None,
+    V: Array | None,
     W: Array,
     Omega_inv: Array | None,
     use_unit_fe: bool,
@@ -100,9 +100,12 @@ def cross_validate(
     """
     N, T = Y.shape
 
+    # Ensure cv_ratio has a default value
+    cv_ratio_val = cv_ratio if cv_ratio is not None else 0.8
+
     def create_folds(key):
         def create_fold_mask(key):
-            return jax.random.bernoulli(key, cv_ratio, shape=(N, T))
+            return jax.random.bernoulli(key, cv_ratio_val, shape=(N, T))
 
         # Ensure K is not None
         k_folds = K if K is not None else 5
@@ -285,9 +288,9 @@ def cross_validate(
 
 def holdout_validate(
     Y: Array,
-    X: Array,
-    Z: Array,
-    V: Array,
+    X: Array | None,
+    Z: Array | None,
+    V: Array | None,
     W: Array,
     Omega_inv: Array | None,
     use_unit_fe: bool,
@@ -597,9 +600,9 @@ def holdout_validate(
 
 def final_fit(
     Y: Array,
-    X: Array,
-    Z: Array,
-    V: Array,
+    X: Array | None,
+    Z: Array | None,
+    V: Array | None,
     W: Array,
     Omega_inv: Array | None,
     use_unit_fe: bool,

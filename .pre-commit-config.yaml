@@ -22,5 +22,5 @@ repos:
         language: python
         entry: ty check
         pass_filenames: false
-        args: [--python=.venv/]
+        args: [--python=.venv/, src]
         additional_dependencies: [ty]
