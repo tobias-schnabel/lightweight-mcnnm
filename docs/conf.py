@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath(os.path.join("..", "src")))
 project = "lightweight-mcnnm"
 copyright = "2024, Tobias Schnabel"
 author = "Tobias Schnabel"
-release = "1.1.2"
+release = "1.1.3"
 
 extensions = [
     "sphinx.ext.autodoc",
