@@ -129,6 +129,7 @@ target-version = "py312"
 [tool.semantic_release]
 assets = []
 build_command = """
+    python -m pip install -e '.[build]'
     uv lock --upgrade-package "$PACKAGE_NAME"
     git add uv.lock
     uv build --no-sources
