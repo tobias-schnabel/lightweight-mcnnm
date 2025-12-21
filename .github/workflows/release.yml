@@ -42,17 +42,10 @@ jobs:
 
     - name: Python Semantic Release
       id: release
-      uses: python-semantic-release/python-semantic-release@v9.12.0
+      uses: python-semantic-release/python-semantic-release@v10.5.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish to PyPI
       if: steps.release.outputs.released == 'true'
       run: uv publish
-
-    - name: Upload to GitHub Release
-      if: steps.release.outputs.released == 'true'
-      uses: python-semantic-release/upload-to-gh-release@main
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ steps.release.outputs.tag }}
