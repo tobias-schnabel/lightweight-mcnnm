@@ -64,7 +64,6 @@ comparison = [
 [tool.uv]
 default-groups = [
     "dev",
-    "comparison",
 ]
 package = true
 
