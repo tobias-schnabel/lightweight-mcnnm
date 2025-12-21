@@ -23,11 +23,10 @@ keywords = [
     "completion",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12"
 ]
 dependencies = [
     "pandas>=2.0.3,<3",
@@ -67,9 +66,6 @@ default-groups = [
 ]
 package = true
 
-[[tool.uv.index]]
-name = "testpypi"
-url = "https://test.pypi.org/legacy/"
 
 [tool.uv.workspace]
 members = ["."]
@@ -95,7 +91,7 @@ exclude_lines = [
     "pass",
     "except ImportError:",
 ]
-fail_under = 0
+fail_under = 70
 show_missing = true
 skip_covered = true
 
