@@ -46,7 +46,7 @@ dev = [
     "pytest-cov>=5,<8",
     "pytest-xdist>=3.6,<4",
     "click>=8.1.7,<9",
-    "importlib-metadata>=8.2.0,<9",
+    "importlib-metadata>=8.2.0,<10",
     "pre-commit>=3.8,<5.0",
     "typed-ast>=1.5.5,<2",
     "jupyter",
